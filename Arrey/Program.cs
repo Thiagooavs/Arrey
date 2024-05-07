@@ -53,6 +53,8 @@ namespace Arrey
             double[] altura = new double[5];
             double[] peso = new double[5];
             string[] clas = new string[5];
+            int aci = 0;
+            double porcen = 0;
 
             for (int i = 0; i <= 4; i++)
             {
@@ -78,23 +80,28 @@ namespace Arrey
                 else if (imc[i] <= 29.9)
                 {
                     clas[i] = "levemente acima do peso";
+                    aci++;
                 }
                 else if (imc[i] <= 34.9)
                 {
                     clas[i] = "obesidade grau I";
+                    aci++;
                 }
                 else if (imc[i] <= 39.9)
                 {
                     clas[i] = "obesidade grau II";
+                    aci++;
                 }
                 else
                 {
                     clas[i] = "obesidade grau III";
+                    aci++;
                 }
 
 
 
                 Console.Clear();
+                porcen = (aci / 5) * 100;
 
             }
             for (int j = 0; j <= 4; j++)
@@ -103,6 +110,7 @@ namespace Arrey
 
 
             }
+            Console.WriteLine("Estão acima do peso: " + porcen + "% do total");
 
 
             Console.ReadKey();
